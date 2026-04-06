@@ -1,39 +1,35 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 public class TrainApp {
-
     public static void main(String[] args) {
 
-        System.out.println("=== Train Consist Management App ===");
+        System.out.println("==================================");
+        System.out.println("UC4 - Maintain Ordered Train Consist");
+        System.out.println("==================================\n");
 
-        // Create ArrayList for passenger bogies
-        List<String> passengerBogies = new ArrayList<>();
+        // Create LinkedList to maintain order
+        LinkedList<String> train = new LinkedList<>();
 
         // Add bogies
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
+        train.add("Engine");
+        train.add("Sleeper");
+        train.add("AC Chair");
+        train.add("Cargo");
+        train.add("Guard");
 
-        // Display bogies after insertion
-        System.out.println("\nPassenger bogies after addition:");
-        System.out.println(passengerBogies);
+        System.out.println("Initial Train Consist:");
+        System.out.println(train);
 
-        // Remove a bogie (AC Chair)
-        passengerBogies.remove("AC Chair");
+        // Insert Pantry Car at position 2
+        train.add(2, "Pantry Car");
 
-        System.out.println("\nAfter removing AC Chair:");
-        System.out.println(passengerBogies);
+        // Remove first and last bogie
+        train.removeFirst();
+        train.removeLast();
 
-        // Check if Sleeper exists
-        boolean isSleeperPresent = passengerBogies.contains("Sleeper");
+        System.out.println("\nFinal Train Consist:");
+        System.out.println(train);
 
-        System.out.println("\nIs Sleeper bogie present? " + isSleeperPresent);
-
-        // Final state
-        System.out.println("\nFinal passenger bogie list:");
-        System.out.println(passengerBogies);
-
-        // Program continues...
+        System.out.println("\nUC4 ordering and modification completed...");
     }
 }
